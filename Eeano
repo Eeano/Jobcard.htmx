@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generator Job Card - 11 Requirements - 0181628290</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+body{font-family:Arial;background:#eef2f7;padding:8px;margin:0}
+.box{background:white;max-width:900px;margin:auto;padding:16px;border-radius:12px;box-shadow:0 4px 14px #0002}
+input,textarea,select{width:100%;padding:12px;margin:6px 0;border:1.5px solid #777;border-radius:6px;font-size:14px;box-sizing:border-box}
+textarea{height:80px}.big{height:120px}
+button{width:100%;padding:14px;margin-top:8px;border:none;border-radius:8px;font-weight:bold;font-size:15px;color:white;cursor:pointer}
+.green{background:#0a3c0a}.orange{background:#ff6a00}.blue{background:#0a3c7a}.red{background:#8b0000}.gray{background:#444}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.monitor{background:#111;color:#0f0;padding:12px;border-radius:8px;margin-top:12px;font-family:monospace;font-size:13px}
+h2,h3{color:#0a3c0a;text-align:center;margin:6px 0}
+label{font-weight:bold;font-size:13px;margin-top:8px;display:block}
+.hidden{display:none}
+.preview{border:2px dashed #0a3c0a;padding:10px;margin-top:10px;background:#f9fff9;white-space:pre-wrap;font-size:13px}
+</style>
+</head>
+<body>
+<div class="box">
+
+<!-- 5. TECHNICIAN LOGIN -->
+<div id="loginDiv">
+<h2>TECHNICIAN LOGIN - 0181628290</h2>
+<p style="text-align:center;font-size:12px">Link sent from 0181628290 - Opens Chrome - Create account</p>
+<label>Technician ID Number *</label><input id="techId" placeholder="e.g. TECH-001">
+<label>Technician Name *</label><input id="techName" placeholder="Jina lako">
+<label>Technician Phone / Whatsapp *</label><input id="techPhone" placeholder="07XXXXXXXX">
+<label>Contact Information</label><input id="techContact" placeholder="Email / Alt number">
+<button class="blue" onclick="doLogin()">OPEN ACCOUNT & CONTINUE</button>
+<p style="font-size:11px;text-align:center">This link from 0181628290 identifies you: ID + Name + Contact</p>
+</div>
+
+<!-- MAIN JOB CARD -->
+<div id="mainDiv" class="hidden">
+<h2>GENERATOR JOB CARD <span id="uniqueId">GEN-2026-00001</span></h2>
+<p style="text-align:center;font-size:11px">Order: 1.Jobcards IDs Tech ID 2.Shared DB Dashboard Backup 3.Fee Ledger Sunday Carry 4.Whatsapp Reminders 5.Photos Signature History</p>
+
+<div class="grid">
+<div><label>Client Name</label><input id="cName"></div>
+<div><label>Client Phone *</label><input id="cPhone" placeholder="07XXXXXXXX"></div>
+</div>
+
+<label>Generator Make</label><input id="gMake" placeholder="e.g. Perkins">
+<div class="grid">
+<div><label>Model</label><input id="gModel"></div>
+<div><label>Serial Number</label><input id="gSerial"></div>
+</div>
+<div class="grid">
+<div><label>Running Hours</label><input id="gHours" type="number"></div>
+<div><label>Location / Site</label><input id="gLocation"></div>
+</div>
+
+<label>Fault Description *</label><textarea id="fault" class="big" placeholder="Describe fault..."></textarea>
+<label>Work Performed *</label><textarea id="work" class="big" placeholder="Kazi uliyofanya..."></textarea>
+<label>Parts / Materials Used</label><textarea id="parts" placeholder="Parts used"></textarea>
+<label>Test Results</label><input id="testRes" placeholder="e.g. Voltage 230V OK">
+<label>Recommendations</label><input id="reco" placeholder="Next service...">
+<label>Client Acknowledgement / Signature Name</label><input id="clientSign" placeholder="Jina la client aliyekubali">
+
+<label>Attach Photos - Fault & Complete Repair (2 photos)</label>
+<input type="file" id="photo1" accept="image/*" onchange="loadPhoto(this,1)">
+<input type="file" id="photo2" accept="image/*" onchange="loadPhoto(this,2)">
+<div id="photoPrev" style="font-size:11px"></div>
+
+<div style="display:flex;gap:6px">
+<button class="green" onclick="submitCard()">SUBMIT & SEND 3 COPIES (PDF LINK)</button>
+<button class="gray" onclick="saveCorrection()">SAVE CORRECTION (Preserve Original)</button>
+</div>
+
+<div id="pdfPreview" class="preview hidden"></div>
+
+<!-- 3,9,10 FEE LEDGER -->
+<div class="monitor">
+<b>FEE LEDGER - 0722402550 -> 0181628290 | Office 0795467171</b><br>
+Rate: Ksh 30 per billable card | Formula: Outstanding = Previous + (Cards x 30) - Payments<br><br>
+Unique ID: <span id="mId">GEN-2026-00001</span> | Tech: <span id="mTech"></span><br>
+Cards This Week: <span id="mCards">0</span> | Fee Due: Ksh <span id="mFee">0</span><br>
+Previous Arrears (Carry): Ksh <span id="mPrev">0</span><br>
+Payments Received: Ksh <span id="mPay">0</span><br>
+<b style="font-size:16px">OUTSTANDING: Ksh <span id="mOut">0</span></b><br><br>
+<label style="color:white">Record Payment from 0722402550:</label>
+<input id="payInput" type="number" placeholder="Amount paid" style="color:black;background:white">
+<button class="orange" onclick="recordPay()">RECORD PAYMENT & CALC CARRY FORWARD</button><br><br>
+<button class="blue" onclick="sendSundayDashboard()">SEND SUNDAY 10AM DASHBOARD to 0795467171 & 0181628290</button>
+<button class="blue" onclick="sendSundayStatement()">SEND SUNDAY STATEMENT TO CLIENT</button>
+<button class="gray" onclick="exportAll()">EXPORT / BACKUP ALL RECORDS</button>
+</div>
+
+<!-- 11 STORAGE -->
+<div style="margin-top:10px;font-size:12px">
+<b>STORAGE:</b> <span id="storageInfo"></span><br>
+Technician sees: Own cards only | Office sees: All authorized records
+<div id="myCardsList" style="margin-top:6px;background:#f0f0f0;padding:6px;max-height:150px;overflow:auto"></div>
+</div>
+
+</div>
+</div>
+
+<script>
+const RATE=30;
+const PAYER='0722402550';
+const PAYEE='0181628290';
+const OFFICE='0795467171';
+let photos={1:null,2:null};
+
+function $(id){return document.getElementById(id)}
+// INIT
+(function(){
+  let urlParams=new URLSearchParams(location.search);
+  if(urlParams.get('tech')) $('techPhone').value=urlParams.get('tech');
+  loadCounters();
+})();
+
+function loadCounters(){
+  let count=parseInt(localStorage.getItem('gen_counter')||'0')+1;
+  let uid=`GEN-2026-${String(count).padStart(5,'0')}`;
+  $('uniqueId').innerText=uid;
+  $('mId').innerText=uid;
+  updateLedger();
+}
+
+function doLogin(){
+  if(!$('techId').value||!$('techName').value||!$('techPhone').value){alert('Jaza ID, Name, Phone');return;}
+  localStorage.setItem('tech_id',$('techId').value);
+  localStorage.setItem('tech_name',$('techName').value);
+  localStorage.setItem('tech_phone',$('techPhone').value);
+  localStorage.setItem('tech_contact',$('techContact').value);
+  $('loginDiv').classList.add('hidden');
+  $('mainDiv').classList.remove('hidden');
+  $('mTech').innerText=$('techName').value+' ('+$('techId').value+')';
+  loadCounters();
+}
+
+function loadPhoto(input,n){
+  let file=input.files[0]; if(!file) return;
+  let reader=new FileReader();
+  reader.onload=e=>{photos[n]=e.target.result; $('photoPrev').innerHTML+=`Photo${n} loaded. `};
+  reader.readAsDataURL(file);
+}
+
+function getFormData(){
+  return {
+    uid:$('uniqueId').innerText,
+    techId:localStorage.getItem('tech_id'),
+    techName:localStorage.getItem('tech_name'),
+    techPhone:localStorage.getItem('tech_phone'),
+    cName:$('cName').value, cPhone:$('cPhone').value,
+    gMake:$('gMake').value, gModel:$('gModel').value, gSerial:$('gSerial').value, gHours:$('gHours').value, gLocation:$('gLocation').value,
+    fault:$('fault').value, work:$('work').value, parts:$('parts').value, testRes:$('testRes').value, reco:$('reco').value, clientSign:$('clientSign').value,
+    date:new Date().toLocaleString(),
+    photos:photos
+  };
+}
+
+function submitCard(){
+  let d=getFormData();
+  if(!d.cPhone||!d.fault||!d.work){alert('Jaza Client Phone, Fault, Work');return;}
+  // 4. Unique ID increment
+  let counter=parseInt(localStorage.getItem('gen_counter')||'0')+1;
+  localStorage.setItem('gen_counter',counter);
+
+  // 11. Store centrally (shared DB simulation) + preserve original
+  let all=JSON.parse(localStorage.getItem('all_cards')||'[]');
+  // Preserve original if exists
+  let existing=all.find(x=>x.uid===d.uid);
+  if(existing){
+    existing.correctionHistory=existing.correctionHistory||[];
+    existing.correctionHistory.push({date:new Date().toLocaleString(), old:{...existing}});
+  }
+  all.push(d);
+  localStorage.setItem('all_cards',JSON.stringify(all));
+
+  // 3. Fee ledger - only when billable
+  let weekCards=parseInt(localStorage.getItem('cards_week')||'0')+1;
+  localStorage.setItem('cards_week',weekCards);
+  
+  // 6. Prepare PDF link (using jsPDF)
+  let pdfText=`GENERATOR JOB CARD ${d.uid}\nTech: ${d.techName} ${d.techId} ${d.techPhone}\nClient: ${d.cName} ${d.cPhone}\nGenerator: ${d.gMake} ${d.gModel} Serial:${d.gSerial} Hours:${d.gHours} Location:${d.gLocation}\nFault: ${d.fault}\nWork: ${d.work}\nParts: ${d.parts}\nTest: ${d.testRes}\nReco: ${d.reco}\nClient Ack: ${d.clientSign}\nDate: ${d.date}\nLink: https://eeano.github.io/Camping-job-card/view.html?id=${d.uid}`;
+  $('pdfPreview').classList.remove('hidden');
+  $('pdfPreview').innerText=pdfText+"\n\n(PDF with photos will be generated - Photos attached: "+Object.keys(photos).length+")";
+
+  // 6. 3 Copies via Whatsapp Link
+  let msg=encodeURIComponent(pdfText);
+  let clientPhone=d.cPhone.replace(/^0/,'254');
+  let officePhone=OFFICE.replace(/^0/,'254');
+  let techPhone=localStorage.getItem('tech_phone').replace(/^0/,'254');
+  
+  // Open client
+  window.open(`https://wa.me/${clientPhone}?text=${msg}`,'_blank');
+  setTimeout(()=>window.open(`https://wa.me/${officePhone}?text=${encodeURIComponent('OFFICE COPY '+d.uid+'\n'+pdfText)}`,'_blank'),1200);
+  setTimeout(()=>window.open(`https://wa.me/${techPhone}?text=${encodeURIComponent('YOUR COPY '+d.uid+'\n'+pdfText)}`,'_blank'),2400);
+  
+  updateLedger();
+  loadCounters();
+  alert(`Card ${d.uid} submitted! 3 Copies sent: Client ${d.cPhone}, Office ${OFFICE}, Technician ${d.techPhone}. Fee Ksh 30 added.`);
+}
+
+function saveCorrection(){
+  submitCard(); // preserves original inside
+}
+
+function updateLedger(){
+  let cards=parseInt(localStorage.getItem('cards_week')||'0');
+  let prev=parseInt(localStorage.getItem('prev_arrears')||'0');
+  let paid=parseInt(localStorage.getItem('payments_received')||'0');
+  let fee=cards*RATE;
+  let out=prev+fee-paid;
+  $('mCards').innerText=cards;
+  $('mFee').innerText=fee;
+  $('mPrev').innerText=prev;
+  $('mPay').innerText=paid;
+  $('mOut').innerText=out;
+  $('storageInfo').innerText=`${JSON.parse(localStorage.getItem('all_cards')||'[]').length} cards stored centrally. Backup ready.`;
+  // my cards list
+  let all=JSON.parse(localStorage.getItem('all_cards')||'[]');
+  let myId=localStorage.getItem('tech_id');
+  let myCards=all.filter(c=>c.techId===myId).map(c=>`${c.uid} - ${c.cName} - ${c.date}`).join('<br>');
+  $('myCardsList').innerHTML=myCards||'No cards yet';
+}
+
+function recordPay(){
+  let amt=parseInt($('payInput').value||'0'); if(amt<=0){alert('Weka amount');return;}
+  let paid=parseInt(localStorage.getItem('payments_received')||'0')+amt;
+  localStorage.setItem('payments_received',paid);
+  let cards=parseInt(localStorage.getItem('cards_week')||'0');
+  let prev=parseInt(localStorage.getItem('prev_arrears')||'0');
+  let fee=cards*RATE;
+  let out=prev+fee-paid;
+  if(out>0){
+    // 9. Carry forward
+    localStorage.setItem('prev_arrears',out);
+    localStorage.setItem('cards_week','0');
+    localStorage.setItem('payments_received','0');
+    alert(`Payment Ksh ${amt} recorded. Outstanding Ksh ${out} carried forward to next week.`);
+  } else {
+    localStorage.setItem('prev_arrears','0');
+    localStorage.setItem('cards_week','0');
+    localStorage.setItem('payments_received','0');
+    alert(`Payment full. No carry. Week reset.`);
+  }
+  updateLedger();
+}
+
+function sendSundayDashboard(){
+  let cards=$('mCards').innerText, fee=$('mFee').innerText, pay=$('mPay').innerText, out=$('mOut').innerText;
+  let msg=`OFFICIAL OFFICE DASHBOARD - SUNDAY 10 AM\nTotal Cards this week: ${cards}\nPayments Received: ${pay}\nFees Due: ${fee}\nOutstanding Amount: ${out}\nPayer ${PAYER} -> Payee ${PAYEE}\nLink: https://eeano.github.io/Camping-job-card/`;
+  window.open(`https://wa.me/${OFFICE.replace(/^0/,'254')}?text=${encodeURIComponent(msg)}`,'_blank');
+  setTimeout(()=>window.open(`https://wa.me/${PAYEE.replace(/^0/,'254')}?text=${encodeURIComponent(msg)}`,'_blank'),1000);
+}
+
+function sendSundayStatement(){
+  let all=JSON.parse(localStorage.getItem('all_cards')||'[]');
+  let last7=all.slice(-5).map(c=>`${c.uid} ${c.cName} ${c.date}`).join('\n');
+  let msg=`AUTOMATIC SUNDAY STATEMENT TO CLIENT\nCards completed this week:\n${last7}\nPayments Received: ${$('mPay').innerText}\nPrevious Arrears: ${$('mPrev').innerText}\nAmount Due: ${$('mOut').innerText}\nThank you.`;
+  let cPhone=$('cPhone').value.replace(/^0/,'254');
+  if(!cPhone){alert('Weka client phone kwanza');return;}
+  window.open(`https://wa.me/${cPhone}?text=${encodeURIComponent(msg)}`,'_blank');
+}
+
+function exportAll(){
+  let data=localStorage.getItem('all_cards');
+  let blob=new Blob([data],{type:'application/json'});
+  let url=URL.createObjectURL(blob);
+  let a=document.createElement('a'); a.href=url; a.download='generator_backup.json'; a.click();
+  alert('Backup exported. Store centrally.');
+}
+</script>
+</body>
+</html>
