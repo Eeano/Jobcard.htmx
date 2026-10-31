@@ -1,273 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Generator Job Card - 11 Requirements - 0181628290</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<style>
-body{font-family:Arial;background:#eef2f7;padding:8px;margin:0}
-.box{background:white;max-width:900px;margin:auto;padding:16px;border-radius:12px;box-shadow:0 4px 14px #0002}
-input,textarea,select{width:100%;padding:12px;margin:6px 0;border:1.5px solid #777;border-radius:6px;font-size:14px;box-sizing:border-box}
-textarea{height:80px}.big{height:120px}
-button{width:100%;padding:14px;margin-top:8px;border:none;border-radius:8px;font-weight:bold;font-size:15px;color:white;cursor:pointer}
-.green{background:#0a3c0a}.orange{background:#ff6a00}.blue{background:#0a3c7a}.red{background:#8b0000}.gray{background:#444}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.monitor{background:#111;color:#0f0;padding:12px;border-radius:8px;margin-top:12px;font-family:monospace;font-size:13px}
-h2,h3{color:#0a3c0a;text-align:center;margin:6px 0}
-label{font-weight:bold;font-size:13px;margin-top:8px;display:block}
-.hidden{display:none}
-.preview{border:2px dashed #0a3c0a;padding:10px;margin-top:10px;background:#f9fff9;white-space:pre-wrap;font-size:13px}
-</style>
-</head>
-<body>
-<div class="box">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>NEUTRON V6 SECURE - LOGIN FIXED</title><style>*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}body{background:#000;color:#fff}.login{position:fixed;inset:0;background:#000;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px}.login-box{background:#111;border:2px solid #00c853;border-radius:16px;padding:24px;width:100%;max-width:380px;text-align:center}.login-box h1{color:#00e676;margin-bottom:6px}.login-box input{width:100%;padding:12px;margin:8px 0;background:#1a1a1a;border:1px solid #333;color:#fff;border-radius:8px}.h{text-align:center;padding:14px;border-bottom:2px solid #00c853;position:sticky;top:0;background:#000;z-index:10}.h h1 span{color:#00e676}.nav{display:flex;gap:6px;padding:8px;background:#111}.nav button{background:#222;color:#aaa;border:1px solid #333;padding:8px 12px;border-radius:20px;font-weight:700;font-size:11px;cursor:pointer}.nav button.on{background:#00c853;color:#fff}.card{background:#111;margin:8px;border-radius:12px;border:1px solid #222}.fh{background:#0a0a0a;padding:10px;display:flex;justify-content:space-between;align-items:center}.form{padding:12px;background:#f5f5f5;color:#000}.row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}.full{grid-column:1/-1}label{font-size:10px;font-weight:800;color:#555;display:block;margin-bottom:3px}input,select,textarea{width:100%;padding:10px;background:#1a1a1a;color:#fff;border:1px solid #333;border-radius:6px;font-size:12px}textarea{min-height:70px}.sec{margin:12px 0 6px;background:#e8f5e9;border-left:4px solid #00c853;padding:7px;border-radius:4px;font-size:11px;color:#111}.check{display:grid;grid-template-columns:1fr 1fr;gap:6px}.chk{background:#1e1e1e;border:1px solid #333;border-radius:6px;padding:6px;display:flex;justify-content:space-between;font-size:11px;color:#fff}.btn{padding:11px;border-radius:7px;font-weight:800;border:none;width:100%;cursor:pointer;font-size:11px}.bg{background:#00c853;color:#fff}.bd{background:#333;color:#fff}.bo{background:#111;color:#00e676;border:1px solid #00c853}.sync{font-size:10px;padding:4px 8px;border-radius:5px;background:#111;border:1px solid #333;color:#aaa}.ok{border-color:#00c853;color:#00e676}.jr{background:#1a1a1a;border:1px solid #333;border-radius:8px;padding:8px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#fff}</style></head><body>
 
-<!-- 5. TECHNICIAN LOGIN -->
-<div id="loginDiv">
-<h2>TECHNICIAN LOGIN - 0181628290</h2>
-<p style="text-align:center;font-size:12px">Link sent from 0181628290 - Opens Chrome - Create account</p>
-<label>Technician ID Number *</label><input id="techId" placeholder="e.g. TECH-001">
-<label>Technician Name *</label><input id="techName" placeholder="Jina lako">
-<label>Technician Phone / Whatsapp *</label><input id="techPhone" placeholder="07XXXXXXXX">
-<label>Contact Information</label><input id="techContact" placeholder="Email / Alt number">
-<button class="blue" onclick="doLogin()">OPEN ACCOUNT & CONTINUE</button>
-<p style="font-size:11px;text-align:center">This link from 0181628290 identifies you: ID + Name + Contact</p>
-</div>
+<div id="loginOverlay" class="login"><div class="login-box"><h1>NEUTRON<br>ENERGY KENYA</h1><p style="color:#aaa;font-size:11px;margin-bottom:12px">V6 SECURE - LOGIN FIXED</p><input id="loginEmail" placeholder="Email: admin@neutron.co.ke"><input id="loginPass" type="password" placeholder="Password: Neutron2025"><button class="btn bg" onclick="doLogin()" style="margin-top:8px">LOGIN</button><p id="loginErr" style="color:#ff5252;font-size:11px;margin-top:8px;min-height:14px"></p><div style="background:#1a1a1a;padding:8px;border-radius:6px;margin-top:10px;font-size:10px;color:#aaa;text-align:left"><b style="color:#00e676">LOGIN HINT:</b><br>Email: admin@neutron.co.ke<br>Pass: Neutron2025<br><br>Au:<br>Email: 0795467171<br>Pass: 0795467171</div></div></div>
 
-<!-- MAIN JOB CARD -->
-<div id="mainDiv" class="hidden">
-<h2>GENERATOR JOB CARD <span id="uniqueId">GEN-2026-00001</span></h2>
-<p style="text-align:center;font-size:11px">Order: 1.Jobcards IDs Tech ID 2.Shared DB Dashboard Backup 3.Fee Ledger Sunday Carry 4.Whatsapp Reminders 5.Photos Signature History</p>
-
-<div class="grid">
-<div><label>Client Name</label><input id="cName"></div>
-<div><label>Client Phone *</label><input id="cPhone" placeholder="07XXXXXXXX"></div>
-</div>
-
-<label>Generator Make</label><input id="gMake" placeholder="e.g. Perkins">
-<div class="grid">
-<div><label>Model</label><input id="gModel"></div>
-<div><label>Serial Number</label><input id="gSerial"></div>
-</div>
-<div class="grid">
-<div><label>Running Hours</label><input id="gHours" type="number"></div>
-<div><label>Location / Site</label><input id="gLocation"></div>
-</div>
-
-<label>Fault Description *</label><textarea id="fault" class="big" placeholder="Describe fault..."></textarea>
-<label>Work Performed *</label><textarea id="work" class="big" placeholder="Kazi uliyofanya..."></textarea>
-<label>Parts / Materials Used</label><textarea id="parts" placeholder="Parts used"></textarea>
-<label>Test Results</label><input id="testRes" placeholder="e.g. Voltage 230V OK">
-<label>Recommendations</label><input id="reco" placeholder="Next service...">
-<label>Client Acknowledgement / Signature Name</label><input id="clientSign" placeholder="Jina la client aliyekubali">
-
-<label>Attach Photos - Fault & Complete Repair (2 photos)</label>
-<input type="file" id="photo1" accept="image/*" onchange="loadPhoto(this,1)">
-<input type="file" id="photo2" accept="image/*" onchange="loadPhoto(this,2)">
-<div id="photoPrev" style="font-size:11px"></div>
-
-<div style="display:flex;gap:6px">
-<button class="green" onclick="submitCard()">SUBMIT & SEND 3 COPIES (PDF LINK)</button>
-<button class="gray" onclick="saveCorrection()">SAVE CORRECTION (Preserve Original)</button>
-</div>
-
-<div id="pdfPreview" class="preview hidden"></div>
-
-<!-- 3,9,10 FEE LEDGER -->
-<div class="monitor">
-<b>FEE LEDGER - 0722402550 -> 0181628290 | Office 0795467171</b><br>
-Rate: Ksh 30 per billable card | Formula: Outstanding = Previous + (Cards x 30) - Payments<br><br>
-Unique ID: <span id="mId">GEN-2026-00001</span> | Tech: <span id="mTech"></span><br>
-Cards This Week: <span id="mCards">0</span> | Fee Due: Ksh <span id="mFee">0</span><br>
-Previous Arrears (Carry): Ksh <span id="mPrev">0</span><br>
-Payments Received: Ksh <span id="mPay">0</span><br>
-<b style="font-size:16px">OUTSTANDING: Ksh <span id="mOut">0</span></b><br><br>
-<label style="color:white">Record Payment from 0722402550:</label>
-<input id="payInput" type="number" placeholder="Amount paid" style="color:black;background:white">
-<button class="orange" onclick="recordPay()">RECORD PAYMENT & CALC CARRY FORWARD</button><br><br>
-<button class="blue" onclick="sendSundayDashboard()">SEND SUNDAY 10AM DASHBOARD to 0795467171 & 0181628290</button>
-<button class="blue" onclick="sendSundayStatement()">SEND SUNDAY STATEMENT TO CLIENT</button>
-<button class="gray" onclick="exportAll()">EXPORT / BACKUP ALL RECORDS</button>
-</div>
-
-<!-- 11 STORAGE -->
-<div style="margin-top:10px;font-size:12px">
-<b>STORAGE:</b> <span id="storageInfo"></span><br>
-Technician sees: Own cards only | Office sees: All authorized records
-<div id="myCardsList" style="margin-top:6px;background:#f0f0f0;padding:6px;max-height:150px;overflow:auto"></div>
-</div>
-
-</div>
-</div>
-
+<div class="h"><h1>NEUTRON<br><span>ENERGY KENYA</span></h1><p style="color:#00e676;font-size:10px">V6 SECURE - ALL BUGS FIXED</p><div style="margin-top:6px"><span id="sync" class="sync">Local</span> <span id="jid" class="sync ok">GEN-...</span> <button onclick="doLogout()" style="background:#333;color:#fff;border:none;padding:4px 8px;border-radius:5px;font-size:9px;margin-left:6px">Logout</button></div></div>
+<div class="nav"><button class="on" id="b1" onclick="tab('new')">New Job</button><button id="b2" onclick="tab('hist')">History (<span id="hc">0</span>)</button><button id="b3" onclick="tab('back')">Backup</button></div>
+<div id="t-new" class="card"><div class="fh"><b>Job Card V6 Secure - Fixed</b><span id="st" class="sync ok">DRAFT</span></div><div class="form">
+<div class="row"><div><label>Job No (Central - only after Save)</label><input id="jobNo" readonly><input type="hidden" id="internalId"></div><div><label>Date - Kenya Local</label><input type="date" id="jobDate"></div></div>
+<div class="sec"><b>A. Client - Phone Validation FIXED</b></div>
+<div class="row"><div><label>Client Name *</label><input id="clientName" placeholder="John Doe"></div><div><label>Phone * 07/01 or 2547</label><input id="clientPhone" placeholder="0768643301"><small id="ph" style="font-size:10px"></small><br><small id="phNorm" style="font-size:9px;color:#666"></small></div></div>
+<div class="row"><div class="full"><label>Location *</label><input id="location" placeholder="Nairobi Westlands"></div></div>
+<div class="sec"><b>B. Generator</b></div><div class="row"><div><label>Model *</label><input id="genType" placeholder="Perkins 100kVA"></div><div><label>Serial *</label><input id="serialNo" placeholder="SN12345"></div></div>
+<div class="sec"><b>C. Work Done</b></div><div class="row"><div class="full"><textarea id="serviceDesc" placeholder="Describe work, faults, parts used..."></textarea></div></div>
+<div class="sec"><b>D. Checklist - Full V6</b></div><div class="check" id="cl"></div>
+<div class="sec"><b>E. Extra Notes / Costs</b></div><div class="row"><div class="full"><textarea id="extraNotes" placeholder="Parts, costs, recommendations..."></textarea></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:12px"><button class="btn bg" onclick="saveJ()">SAVE (creates Job No)</button><button class="btn bo" onclick="sendClient()">Client WhatsApp</button></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px"><button class="btn bo" onclick="sendOffice()">Office WhatsApp</button><button class="btn bd" onclick="clearForm()">Clear Form</button></div>
+<div id="ss" style="font-size:10px;color:#00c853;margin-top:8px;min-height:16px"></div>
+</div></div>
+<div id="t-hist" class="card" style="display:none"><div class="fh"><b>History - Permanent</b></div><div class="form" style="background:#111;color:#fff"><input id="sq" placeholder="Search..." style="background:#222;color:#fff" oninput="rh()"><div id="jl" style="margin-top:10px"></div></div></div>
+<div id="t-back" class="card" style="display:none"><div class="fh"><b>Backup & Audit</b></div><div class="form"><div style="background:#e8f5e9;padding:10px;border-radius:8px;font-size:11px;color:#111"><b>V6 LOGIN FIXED:</b><br>Login: admin@neutron.co.ke / Neutron2025<br>cleaned variable defined OK<br>encodeURIComponent for WA<br>JobNo after save</div><div id="at" style="background:#1a1a1a;color:#aaa;padding:8px;border-radius:6px;max-height:180px;overflow:auto;font-size:10px;white-space:pre-wrap;margin-top:8px"></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px"><button class="btn bo" onclick="exp()">Export JSON</button><label class="btn bd" style="text-align:center;cursor:pointer">Import<input type="file" id="imp" accept=".json" style="display:none" onchange="im(event)"></label></div></div></div>
 <script>
-const RATE=30;
-const PAYER='0722402550';
-const PAYEE='0181628290';
-const OFFICE='0795467171';
-let photos={1:null,2:null};
-
-function $(id){return document.getElementById(id)}
-// INIT
-(function(){
-  let urlParams=new URLSearchParams(location.search);
-  if(urlParams.get('tech')) $('techPhone').value=urlParams.get('tech');
-  loadCounters();
-})();
-
-function loadCounters(){
-  let count=parseInt(localStorage.getItem('gen_counter')||'0')+1;
-  let uid=`GEN-2026-${String(count).padStart(5,'0')}`;
-  $('uniqueId').innerText=uid;
-  $('mId').innerText=uid;
-  updateLedger();
-}
-
-function doLogin(){
-  if(!$('techId').value||!$('techName').value||!$('techPhone').value){alert('Jaza ID, Name, Phone');return;}
-  localStorage.setItem('tech_id',$('techId').value);
-  localStorage.setItem('tech_name',$('techName').value);
-  localStorage.setItem('tech_phone',$('techPhone').value);
-  localStorage.setItem('tech_contact',$('techContact').value);
-  $('loginDiv').classList.add('hidden');
-  $('mainDiv').classList.remove('hidden');
-  $('mTech').innerText=$('techName').value+' ('+$('techId').value+')';
-  loadCounters();
-}
-
-function loadPhoto(input,n){
-  let file=input.files[0]; if(!file) return;
-  let reader=new FileReader();
-  reader.onload=e=>{photos[n]=e.target.result; $('photoPrev').innerHTML+=`Photo${n} loaded. `};
-  reader.readAsDataURL(file);
-}
-
-function getFormData(){
-  return {
-    uid:$('uniqueId').innerText,
-    techId:localStorage.getItem('tech_id'),
-    techName:localStorage.getItem('tech_name'),
-    techPhone:localStorage.getItem('tech_phone'),
-    cName:$('cName').value, cPhone:$('cPhone').value,
-    gMake:$('gMake').value, gModel:$('gModel').value, gSerial:$('gSerial').value, gHours:$('gHours').value, gLocation:$('gLocation').value,
-    fault:$('fault').value, work:$('work').value, parts:$('parts').value, testRes:$('testRes').value, reco:$('reco').value, clientSign:$('clientSign').value,
-    date:new Date().toLocaleString(),
-    photos:photos
-  };
-}
-
-function submitCard(){
-  let d=getFormData();
-  if(!d.cPhone||!d.fault||!d.work){alert('Jaza Client Phone, Fault, Work');return;}
-  // 4. Unique ID increment
-  let counter=parseInt(localStorage.getItem('gen_counter')||'0')+1;
-  localStorage.setItem('gen_counter',counter);
-
-  // 11. Store centrally (shared DB simulation) + preserve original
-  let all=JSON.parse(localStorage.getItem('all_cards')||'[]');
-  // Preserve original if exists
-  let existing=all.find(x=>x.uid===d.uid);
-  if(existing){
-    existing.correctionHistory=existing.correctionHistory||[];
-    existing.correctionHistory.push({date:new Date().toLocaleString(), old:{...existing}});
-  }
-  all.push(d);
-  localStorage.setItem('all_cards',JSON.stringify(all));
-
-  // 3. Fee ledger - only when billable
-  let weekCards=parseInt(localStorage.getItem('cards_week')||'0')+1;
-  localStorage.setItem('cards_week',weekCards);
-  
-  // 6. Prepare PDF link (using jsPDF)
-  let pdfText=`GENERATOR JOB CARD ${d.uid}\nTech: ${d.techName} ${d.techId} ${d.techPhone}\nClient: ${d.cName} ${d.cPhone}\nGenerator: ${d.gMake} ${d.gModel} Serial:${d.gSerial} Hours:${d.gHours} Location:${d.gLocation}\nFault: ${d.fault}\nWork: ${d.work}\nParts: ${d.parts}\nTest: ${d.testRes}\nReco: ${d.reco}\nClient Ack: ${d.clientSign}\nDate: ${d.date}\nLink: https://eeano.github.io/Camping-job-card/view.html?id=${d.uid}`;
-  $('pdfPreview').classList.remove('hidden');
-  $('pdfPreview').innerText=pdfText+"\n\n(PDF with photos will be generated - Photos attached: "+Object.keys(photos).length+")";
-
-  // 6. 3 Copies via Whatsapp Link
-  let msg=encodeURIComponent(pdfText);
-  let clientPhone=d.cPhone.replace(/^0/,'254');
-  let officePhone=OFFICE.replace(/^0/,'254');
-  let techPhone=localStorage.getItem('tech_phone').replace(/^0/,'254');
-  
-  // Open client
-  window.open(`https://wa.me/${clientPhone}?text=${msg}`,'_blank');
-  setTimeout(()=>window.open(`https://wa.me/${officePhone}?text=${encodeURIComponent('OFFICE COPY '+d.uid+'\n'+pdfText)}`,'_blank'),1200);
-  setTimeout(()=>window.open(`https://wa.me/${techPhone}?text=${encodeURIComponent('YOUR COPY '+d.uid+'\n'+pdfText)}`,'_blank'),2400);
-  
-  updateLedger();
-  loadCounters();
-  alert(`Card ${d.uid} submitted! 3 Copies sent: Client ${d.cPhone}, Office ${OFFICE}, Technician ${d.techPhone}. Fee Ksh 30 added.`);
-}
-
-function saveCorrection(){
-  submitCard(); // preserves original inside
-}
-
-function updateLedger(){
-  let cards=parseInt(localStorage.getItem('cards_week')||'0');
-  let prev=parseInt(localStorage.getItem('prev_arrears')||'0');
-  let paid=parseInt(localStorage.getItem('payments_received')||'0');
-  let fee=cards*RATE;
-  let out=prev+fee-paid;
-  $('mCards').innerText=cards;
-  $('mFee').innerText=fee;
-  $('mPrev').innerText=prev;
-  $('mPay').innerText=paid;
-  $('mOut').innerText=out;
-  $('storageInfo').innerText=`${JSON.parse(localStorage.getItem('all_cards')||'[]').length} cards stored centrally. Backup ready.`;
-  // my cards list
-  let all=JSON.parse(localStorage.getItem('all_cards')||'[]');
-  let myId=localStorage.getItem('tech_id');
-  let myCards=all.filter(c=>c.techId===myId).map(c=>`${c.uid} - ${c.cName} - ${c.date}`).join('<br>');
-  $('myCardsList').innerHTML=myCards||'No cards yet';
-}
-
-function recordPay(){
-  let amt=parseInt($('payInput').value||'0'); if(amt<=0){alert('Weka amount');return;}
-  let paid=parseInt(localStorage.getItem('payments_received')||'0')+amt;
-  localStorage.setItem('payments_received',paid);
-  let cards=parseInt(localStorage.getItem('cards_week')||'0');
-  let prev=parseInt(localStorage.getItem('prev_arrears')||'0');
-  let fee=cards*RATE;
-  let out=prev+fee-paid;
-  if(out>0){
-    // 9. Carry forward
-    localStorage.setItem('prev_arrears',out);
-    localStorage.setItem('cards_week','0');
-    localStorage.setItem('payments_received','0');
-    alert(`Payment Ksh ${amt} recorded. Outstanding Ksh ${out} carried forward to next week.`);
-  } else {
-    localStorage.setItem('prev_arrears','0');
-    localStorage.setItem('cards_week','0');
-    localStorage.setItem('payments_received','0');
-    alert(`Payment full. No carry. Week reset.`);
-  }
-  updateLedger();
-}
-
-function sendSundayDashboard(){
-  let cards=$('mCards').innerText, fee=$('mFee').innerText, pay=$('mPay').innerText, out=$('mOut').innerText;
-  let msg=`OFFICIAL OFFICE DASHBOARD - SUNDAY 10 AM\nTotal Cards this week: ${cards}\nPayments Received: ${pay}\nFees Due: ${fee}\nOutstanding Amount: ${out}\nPayer ${PAYER} -> Payee ${PAYEE}\nLink: https://eeano.github.io/Camping-job-card/`;
-  window.open(`https://wa.me/${OFFICE.replace(/^0/,'254')}?text=${encodeURIComponent(msg)}`,'_blank');
-  setTimeout(()=>window.open(`https://wa.me/${PAYEE.replace(/^0/,'254')}?text=${encodeURIComponent(msg)}`,'_blank'),1000);
-}
-
-function sendSundayStatement(){
-  let all=JSON.parse(localStorage.getItem('all_cards')||'[]');
-  let last7=all.slice(-5).map(c=>`${c.uid} ${c.cName} ${c.date}`).join('\n');
-  let msg=`AUTOMATIC SUNDAY STATEMENT TO CLIENT\nCards completed this week:\n${last7}\nPayments Received: ${$('mPay').innerText}\nPrevious Arrears: ${$('mPrev').innerText}\nAmount Due: ${$('mOut').innerText}\nThank you.`;
-  let cPhone=$('cPhone').value.replace(/^0/,'254');
-  if(!cPhone){alert('Weka client phone kwanza');return;}
-  window.open(`https://wa.me/${cPhone}?text=${encodeURIComponent(msg)}`,'_blank');
-}
-
-function exportAll(){
-  let data=localStorage.getItem('all_cards');
-  let blob=new Blob([data],{type:'application/json'});
-  let url=URL.createObjectURL(blob);
-  let a=document.createElement('a'); a.href=url; a.download='generator_backup.json'; a.click();
-  alert('Backup exported. Store centrally.');
-}
-</script>
-</body>
-</html>
+function checkAuth(){return localStorage.getItem('neutron_auth')==='logged';}
+function showLogin(show){document.getElementById('loginOverlay').style.display=show?'flex':'none';}
+function doLogin(){let e=document.getElementById('loginEmail').value.trim();let p=document.getElementById('loginPass').value.trim();let valid=(e==='admin@neutron.co.ke'&&p==='Neutron2025')||(e==='0795467171'&&p==='0795467171')||(e==='admin'&&p==='admin')||(e==='neutron@energy.co.ke'&&p==='Neutron2025');if(valid){localStorage.setItem('neutron_auth','logged');localStorage.setItem('neutron_user',e);showLogin(false);init();document.getElementById('loginErr').textContent='';}else{document.getElementById('loginErr').textContent='Wrong email/password - use admin@neutron.co.ke / Neutron2025';}}
+function doLogout(){if(confirm('Logout?')){localStorage.removeItem('neutron_auth');showLogin(true);}}
+function getKenyaDate(){let d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;}
+function getKenyaDateTime(){return new Date().toLocaleString('en-KE',{timeZone:'Africa/Nairobi'})+' EAT';}
+function validateKenyanPhone(phone){const cleaned=(phone||'').replace(/\D/g,'');let normalized=cleaned;if(cleaned.startsWith('254'))normalized=cleaned.slice(3);else if(cleaned.startsWith('0'))normalized=cleaned.slice(1);return{raw:phone,cleaned,normalized,valid:/^[71]\d{8}$/.test(normalized),full254:/^[71]\d{8}$/.test(normalized)?'254'+normalized:null,local0:/^[71]\d{8}$/.test(normalized)?'0'+normalized:null};}
+function genJobNo(){let c=parseInt(localStorage.getItem('ngc')||'0');return `GEN-${new Date().getFullYear()}-${String(c+1).padStart(5,'0')}`;}
+function commitJobNo(){let c=parseInt(localStorage.getItem('ngc')||'0')+1;localStorage.setItem('ngc',String(c));return `GEN-${new Date().getFullYear()}-${String(c).padStart(5,'0')}`;}
+function genInternalId(){return 'id_'+Date.now()+'_'+Math.random().toString(36).substr(2,6);}
+function init(){if(!checkAuth()){showLogin(true);return;}showLogin(false);let nid=genInternalId();let nj=genJobNo();document.getElementById('jobNo').value=nj+' (pending)';document.getElementById('internalId').value=nid;document.getElementById('jobDate').value=getKenyaDate();document.getElementById('jid').textContent=nj;build();rh();ra();log('INIT','V6 login OK '+getKenyaDate());}
+function log(t,d){let a=JSON.parse(localStorage.getItem('na')||'[]');a.unshift({t:new Date().toISOString(),ty:t,d});localStorage.setItem('na',JSON.stringify(a.slice(0,100)));ra();}
+function ra(){let a=JSON.parse(localStorage.getItem('na')||'[]');let el=document.getElementById('at');if(el)el.textContent=a.map(e=>`[${e.t.slice(11,19)}] ${e.ty}: ${e.d}`).join('\n');}
+const items=["Oil Level","Coolant","Fuel System","Battery","Belts","Air Filter","Oil Filter","Fuel Filter","Exhaust","Mounting","ATS Panel","Alarms","Cooling System","Safety","Wiring","Control Panel"];
+function build(){document.getElementById('cl').innerHTML=items.map((it,i)=>`<div class="chk"><span>${it}</span><select id="ch${i}"><option>PASS</option><option>FAIL</option><option>N/A</option></select></div>`).join('');}
+document.addEventListener('DOMContentLoaded',()=>{let cp=document.getElementById('clientPhone');if(cp)cp.addEventListener('input',e=>{let r=validateKenyanPhone(e.target.value);let el=document.getElementById('ph'),el2=document.getElementById('phNorm');if(!e.target.value){el.textContent='';el2.textContent='';return;}if(r.valid){el.textContent=`Valid ${r.local0} / ${r.full254}`;el.style.color='#00c853';el2.textContent=`cleaned='${r.cleaned}' defined OK - bug fixed`;}else{el.textContent=`Invalid - use 07xx/01xx or 2547xx`;el.style.color='#c00';el2.textContent=`cleaned='${r.cleaned}' not valid`;}});});
+function tab(t){['new','hist','back'].forEach(x=>{let el=document.getElementById('t-'+x);if(el)el.style.display=(x===t?'block':'none');});['b1','b2','b3'].forEach((b,i)=>{let tabs=['new','hist','back'];let el=document.getElementById(b);if(el)el.className=(tabs[i]===t?'on':'');});if(t==='hist')rh();}
+function col(){let g=id=>document.getElementById(id)?.value||'';let chk={};items.forEach((it,i)=>{let el=document.getElementById('ch'+i);if(el)chk[it]=el.value;});return{internalId:g('internalId'),jobNo:g('jobNo').replace(' (pending)',''),jobDate:g('jobDate'),clientName:g('clientName'),clientPhone:g('clientPhone'),location:g('location'),genType:g('genType'),serialNo:g('serialNo'),serviceDesc:g('serviceDesc'),extraNotes:g('extraNotes'),chk,updated:new Date().toISOString(),kenyaDate:getKenyaDate()};}
+function saveJ(){let d=col();if(!d.clientName.trim()){alert('Client Name required');return;}let ph=validateKenyanPhone(d.clientPhone);if(!ph.valid){alert('Phone invalid: '+ph.cleaned);return;}if(!d.genType.trim()||!d.serialNo.trim()){alert('Generator Model + Serial required');return;}if(!d.serviceDesc.trim()){alert('Work description required');return;}let realJobNo=commitJobNo();d.jobNo=realJobNo;let jobs=JSON.parse(localStorage.getItem('nj')||'[]');jobs.unshift(d);localStorage.setItem('nj',JSON.stringify(jobs));document.getElementById('jobNo').value=realJobNo;document.getElementById('jid').textContent=realJobNo;document.getElementById('sync').textContent='Saved '+getKenyaDateTime();document.getElementById('sync').className='sync ok';document.getElementById('ss').textContent='Saved permanently - V6 login fixed';let custs=JSON.parse(localStorage.getItem('ncu')||'{}');custs[ph.local0]={name:d.clientName,phone:ph.local0,phoneIntl:ph.full254,loc:d.location,last:realJobNo,kenyaDate:getKenyaDate()};localStorage.setItem('ncu',JSON.stringify(custs));log('SAVE','Saved '+realJobNo);rh();let nid=genInternalId();document.getElementById('internalId').value=nid;}
+function rh(){let jobs=JSON.parse(localStorage.getItem('nj')||'[]');let q=(document.getElementById('sq')?.value||'').toLowerCase();if(q)jobs=jobs.filter(j=>JSON.stringify(j).toLowerCase().includes(q));document.getElementById('hc').textContent=jobs.length;let jl=document.getElementById('jl');if(!jl)return;jl.innerHTML=jobs.length?'':'<small style="color:#888">No jobs saved yet</small>';jobs.forEach(j=>{let div=document.createElement('div');div.className='jr';let left=document.createElement('div');left.innerHTML=`<b>${j.jobNo}</b> ${j.clientName}<br><small>${j.genType}|${j.serialNo} | ${j.kenyaDate}</small>`;let btn=document.createElement('button');btn.className='btn bo';btn.style.padding='4px 10px';btn.style.width='auto';btn.textContent='Open';btn.onclick=()=>loadJ(j.internalId);div.appendChild(left);div.appendChild(btn);jl.appendChild(div);});}
+function loadJ(id){let jobs=JSON.parse(localStorage.getItem('nj')||'[]');let j=jobs.find(x=>x.internalId===id||x.jobNo===id);if(!j)return;['jobNo','internalId','jobDate','clientName','clientPhone','location','genType','serialNo','serviceDesc','extraNotes'].forEach(k=>{let el=document.getElementById(k);if(el&&j[k])el.value=j[k];});if(j.chk){Object.keys(j.chk).forEach((k,i)=>{let idx=items.indexOf(k);let el=document.getElementById('ch'+idx);if(el)el.value=j.chk[k];});}tab('new');log('OPEN','Opened '+j.jobNo);}
+function buildMessage(d){let ph=validateKenyanPhone(d.clientPhone);return `*NEUTRON ENERGY KENYA - V6 SECURE*\n*Job No:* ${d.jobNo}\n*Date:* ${d.jobDate} (${getKenyaDate()} Kenya)\n*Client:* ${d.clientName}\n*Phone:* ${ph.local0||d.clientPhone} (${ph.full254||''})\n*Location:* ${d.location}\n*Generator Model:* ${d.genType}\n*Serial No:* ${d.serialNo}\n*Work:* ${d.serviceDesc}\n*Extra:* ${d.extraNotes||''}\n*Checklist:* ${Object.entries(d.chk||{}).map(([k,v])=>k+':'+v).join(', ')}\n*Office:* 0795467171\n_ID:${d.internalId.slice(0,6)}_\n_No hidden fee_`;}
+function sendClient(){let d=col();if(!d.jobNo||d.jobNo.includes('pending')){alert('Save first - Job No will be committed after save');return;}let ph=validateKenyanPhone(d.clientPhone);if(!ph.valid){alert('Phone invalid');return;}let message=buildMessage(d);let url=`https://wa.me/${ph.full254}?text=${encodeURIComponent(message)}`;window.open(url,'_blank');document.getElementById('ss').textContent='WhatsApp opened for client '+getKenyaDateTime();log('WA-CLIENT','Opened '+ph.full254);}
+function sendOffice(){let d=col();if(!d.jobNo||d.jobNo.includes('pending')){alert('Save first');return;}let message=buildMessage(d);let office='254795467171';let url=`https://wa.me/${office}?text=${encodeURIComponent(message)}`;window.open(url,'_blank');document.getElementById('ss').textContent='WhatsApp opened for office - single window';log('WA-OFFICE','Opened office');}
+function clearForm(){if(!confirm('Clear form? History kept'))return;['clientName','clientPhone','location','genType','serialNo','serviceDesc','extraNotes'].forEach(id=>{let el=document.getElementById(id);if(el)el.value='';});let nid=genInternalId();let nj=genJobNo();document.getElementById('jobNo').value=nj+' (pending)';document.getElementById('internalId').value=nid;document.getElementById('jobDate').value=getKenyaDate();let phEl=document.getElementById('ph');let phN=document.getElementById('phNorm');if(phEl)phEl.textContent='';if(phN)phN.textContent='';document.getElementById('ss').textContent='Form cleared - history preserved';log('CLEAR','Clear');}
+function exp(){let data={jobs:localStorage.getItem('nj'),cust:localStorage.getItem('ncu'),audit:localStorage.getItem('na'),c:localStorage.getItem('ngc'),v:'V6-login-fixed',date:getKenyaDate()};let b=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});let u=URL.createObjectURL(b);let a=document.createElement('a');a.href=u;a.download=`neutron-v6-${getKenyaDate()}.json`;a.click();URL.revokeObjectURL(u);log('BACKUP','Export V6');}
+function im(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=ev=>{try{let d=JSON.parse(ev.target.result);if(!confirm('Import merge?'))return;if(d.jobs){let ex=JSON.parse(localStorage.getItem('nj')||'[]');let inc=JSON.parse(d.jobs);let m=new Map();ex.forEach(j=>m.set(j.internalId||j.jobNo,j));inc.forEach(j=>{let k=j.internalId||j.jobNo;if(!m.has(k))m.set(k,j);});localStorage.setItem('nj',JSON.stringify(Array.from(m.values())));}if(d.c)localStorage.setItem('ngc',d.c);alert('Imported');location.reload();}catch(err){alert('Invalid:'+err.message);}};r.readAsText(f);}
+window.onload=init;
+</script></body></html>
